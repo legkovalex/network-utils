@@ -1,2 +1,2 @@
-Docker imgage with network utils
+Docker image with network utils
 
