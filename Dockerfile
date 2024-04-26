@@ -1,9 +1,8 @@
-FROM debian:buster
+FROM alpine
 
 MAINTAINER Legkov Alexey <legkovalex@gmail.com>
-RUN apt-get update \
-    && apt-get install -y traceroute curl dnsutils netcat-openbsd jq nmap net-tools telnet \
-    && rm -rf /var/lib/apt/lists/*
+
+RUN apk update && apk add --no-cache iperf tcpdump inetutils-telnet nmap curl wget jq traceroute bind-tools netcat-openbsd
 
 COPY Dockerfile /Dockerfile
 LABEL org.label-schema.docker.dockerfile="/Dockerfile" \
